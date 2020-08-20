@@ -3,7 +3,7 @@ IP_Web_Service_Sample
 
 
 
-Signing the jwt
+Signing the jwt using RSA private key and sha256 hash
 
             var encodedHdr= Convert.ToBase64String(Encoding.UTF8.GetBytes(header));
             var encodedBdy = Convert.ToBase64String(Encoding.UTF8.GetBytes(body));
@@ -24,7 +24,7 @@ Signing the jwt
             
 
 
-Encrypting the JWT
+Encrypting the JWT using RSA public certificate
 
             RSACryptoServiceProvider publicKey = (RSACryptoServiceProvider)GetCertificate(publickeyThumbprint).PublicKey.Key;
 
@@ -34,7 +34,7 @@ Encrypting the JWT
                    JweEncryption.A256GCM).Trim(new char[] { '"' });
 
 
-Decrypting the payload
+Decrypting the payload using rsa private key
 
             RSACryptoServiceProvider privateKeyToDecrypt = new RSACryptoServiceProvider();
             privateKeyToDecrypt.FromXmlString(Utility.GetCertificate(privateKeyThumbprint).PrivateKey.ToXmlString(true));
@@ -45,7 +45,7 @@ Decrypting the payload
                     JweEncryption.A256GCM).Trim(new char[] { '"' });
                     
 
-Verifying the signature
+Verifying the signature using RSA public certificate
 
             RSACryptoServiceProvider key = (RSACryptoServiceProvider)Utility.GetCertificate(publicCertThumbprint).PublicKey.Key;
 
