@@ -27,14 +27,12 @@ namespace IP_Web_Service_Sample.Controllers
         // POST: api/IllegalParking
         [HttpPost]
         [Route("SubmitCase")]
-        //[JwtAuthentication]
         [JwtAuthorize]
-        public string SubmitCase(Case jwtToken)//([fromBody] string jwtToken)
+        public string SubmitCase(Case jwtToken)
         {
             var raw = jwtToken;
-            //var decryptedJwt = Utility.DecryptPayload(raw, PRIVATE_KEY_THUMBPRINT);
 
-            //var content = Utility.VerifyJWT(decryptedJwt, true, PUBLIC_CERT_THUMBPRINT);
+            var bdyObj = raw.bdy.FromJSON();
 
             return "Congratulation: recieved request with case details:" + raw.bdy;
         }

@@ -162,7 +162,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IllegalParkingController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
-    <Compile Include="Filters\JwtAuthenticationAttribute.cs" />
     <Compile Include="Filters\JwtAuthorizeAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -202,6 +201,7 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include=".well-known\assetlinks.json" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

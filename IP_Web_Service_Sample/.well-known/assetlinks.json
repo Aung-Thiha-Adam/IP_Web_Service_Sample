@@ -1,0 +1,10 @@
+[
+  {
+    "relation": [ "delegate_permission/common.handle_all_urls" ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.pccw.mynotifpoc",
+      "sha256_cert_fingerprints": [ "74:FF:BB:7D:E9:54:EB:EF:A7:44:89:13:A8:3A:A6:85:62:13:DC:8A:C9:F4:E2:DC:B9:9C:77:CD:FE:DB:C2:6F" ]
+    }
+  }
+]
